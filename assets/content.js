@@ -676,7 +676,7 @@ billing: {
 </table>
 
 <h2>Enterprise — Custom pricing</h2>
-<p>For large organizations. Includes unlimited members, custom AI quota, SSO/SAML, dedicated support with SLA, on-premise option, and custom integrations. Contact <strong>support@alphaspace.app</strong> to get a quote.</p>
+<p>For large organizations. Includes unlimited members, custom AI quota, SSO/SAML, dedicated support with SLA, on-premise option, and custom integrations. Contact <strong>uyowega3231123@gmail.com</strong> to get a quote.</p>
 
 <h2>How to Upgrade</h2>
 <ol>
@@ -931,13 +931,12 @@ faq: {
 <p><strong>We do not delete your data when you cancel.</strong> If you later upgrade again, everything is still there. The only way your data is deleted is if you explicitly delete your account (see <a href="settings.html">Settings documentation</a>).</p>
 
 <h2>How do I contact support?</h2>
-<p>Send an email to <strong>support@alphaspace.app</strong> with a description of your issue. Include:</p>
+<p>Reach us through any of these channels:</p>
 <ul>
-  <li>Your account email</li>
-  <li>A short description of what happened</li>
-  <li>Any error messages you saw</li>
+  <li><strong>Email:</strong> <a href="mailto:uyowega3231123@gmail.com">uyowega3231123@gmail.com</a></li>
+  <li><strong>Telegram:</strong> <a href="https://t.me/bloknotpr" target="_blank" rel="noopener noreferrer">@bloknotpr</a> — fastest response</li>
 </ul>
-<p>For billing questions, include your plan name and when the issue occurred. We aim to respond within 1 business day.</p>
+<p>When writing, include your account email, a short description of what happened, and any error messages you saw. We aim to respond within 1 business day.</p>
 
 <h2>What does ARIA have access to?</h2>
 <p>ARIA can see:</p>
@@ -956,7 +955,7 @@ faq: {
 </ul>
 <p>For the full breakdown, see the <a href="aria.html">ARIA documentation</a>.</p>
 
-<p class="doc-footer-link">Need more help? Email us at <strong>support@alphaspace.app</strong></p>
+<p class="doc-footer-link">Need more help? Email <a href="mailto:uyowega3231123@gmail.com">uyowega3231123@gmail.com</a> or write on <a href="https://t.me/bloknotpr" target="_blank" rel="noopener noreferrer">Telegram @bloknotpr</a></p>
 `}
 
 }; /* end window.DOCS */

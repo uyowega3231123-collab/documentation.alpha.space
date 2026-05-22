@@ -105,6 +105,17 @@
       '<div class="layout-body">' +
         '<aside class="sidebar" id="sidebar">' +
           '<nav class="sidebar-nav">' + buildNav(pageKey) + '</nav>' +
+          '<div class="sidebar-contacts">' +
+            '<div class="sidebar-contacts-title">Contact</div>' +
+            '<a href="mailto:uyowega3231123@gmail.com" class="sidebar-contact-link">' +
+              '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>' +
+              ' uyowega3231123@gmail.com' +
+            '</a>' +
+            '<a href="https://t.me/bloknotpr" class="sidebar-contact-link" target="_blank" rel="noopener noreferrer">' +
+              '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 3-8.646 19.014a.5.5 0 0 1-.892.049L9 13 2.938 10.538a.5.5 0 0 1-.05-.892z"/></svg>' +
+              ' Telegram @bloknotpr' +
+            '</a>' +
+          '</div>' +
         '</aside>' +
         '<main class="main-content">' +
           '<div class="doc-content">' + doc.content + '</div>' +
@@ -115,6 +126,19 @@
             '<button class="feedback-btn" id="fb-no">No</button>' +
             '<span class="feedback-sep">·</span>' +
             '<a href="https://alpha-space-seven.vercel.app" class="feedback-app-link" target="_blank" rel="noopener noreferrer">Open Alpha Space →</a>' +
+          '</div>' +
+          '<div class="page-footer">' +
+            '<div class="page-footer-contacts">' +
+              '<span class="page-footer-label">Questions?</span>' +
+              '<a href="mailto:uyowega3231123@gmail.com" class="page-footer-link">' +
+                '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>' +
+                'uyowega3231123@gmail.com' +
+              '</a>' +
+              '<a href="https://t.me/bloknotpr" class="page-footer-link" target="_blank" rel="noopener noreferrer">' +
+                '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 3-8.646 19.014a.5.5 0 0 1-.892.049L9 13 2.938 10.538a.5.5 0 0 1-.05-.892z"/></svg>' +
+                'Telegram @bloknotpr' +
+              '</a>' +
+            '</div>' +
           '</div>' +
         '</main>' +
       '</div>' +
