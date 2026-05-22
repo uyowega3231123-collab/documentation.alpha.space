@@ -10,24 +10,83 @@ window.DOCS = {
 index: {
   title: 'Overview',
   content: `
-<h1>Alpha Space — Overview</h1>
-<p>Alpha Space is your all-in-one workspace for staying organized, collaborating with your team, and getting more done with the help of AI. It brings together Kanban boards, personal tasks, visual planning, spreadsheets, notes, and an AI assistant — all in one place.</p>
+<div class="hero-title">Alpha Space</div>
+<div class="hero-tags">
+  <span class="hero-tag">Spaces</span>
+  <span class="hero-tag">Boards</span>
+  <span class="hero-tag">Notes</span>
+  <span class="hero-tag">Sheets</span>
+  <span class="hero-tag">AI</span>
+</div>
+<p class="hero-subtitle">Your all-in-one workspace for staying organized, collaborating with your team, and getting more done with the help of AI.</p>
+
+<h2>Where do you want to start?</h2>
+<div class="persona-grid">
+  <a href="dashboard.html" class="persona-card">
+    <div class="persona-icon">👤</div>
+    <div class="persona-title">Solo user</div>
+    <div class="persona-desc">I work alone and want to get organized fast — tasks, notes, and AI in one place</div>
+    <div class="persona-cta">Dashboard → Tasks → ARIA →</div>
+  </a>
+  <a href="spaces.html" class="persona-card">
+    <div class="persona-icon">👥</div>
+    <div class="persona-title">Setting up a team</div>
+    <div class="persona-desc">I'm onboarding my team and managing projects together with shared boards</div>
+    <div class="persona-cta">Spaces → Settings → Billing →</div>
+  </a>
+</div>
 
 <h2>Features at a Glance</h2>
-<table>
-  <thead><tr><th>Feature</th><th>What it does</th></tr></thead>
-  <tbody>
-    <tr><td><a href="dashboard.html">Dashboard</a></td><td>See your day at a glance — tasks due, active spaces, AI usage, and weekly progress</td></tr>
-    <tr><td><a href="spaces.html">Spaces</a></td><td>Kanban boards for managing projects with your team or solo</td></tr>
-    <tr><td><a href="tasks.html">Tasks</a></td><td>Personal task list for things that don't belong to a project</td></tr>
-    <tr><td><a href="boards.html">Boards</a></td><td>Free-form visual canvas for brainstorming, mood boards, and planning</td></tr>
-    <tr><td><a href="notes.html">Notes</a></td><td>Rich-text notes organized by category with images, drawings, and search</td></tr>
-    <tr><td><a href="sheets.html">Sheets</a></td><td>Spreadsheets with formula support and 51 ready-to-use templates</td></tr>
-    <tr><td><a href="aria.html">ARIA</a></td><td>Your AI assistant — creates tasks, moves things around, and answers questions</td></tr>
-    <tr><td><a href="billing.html">Billing</a></td><td>Plans and pricing — free forever, or upgrade for more power</td></tr>
-    <tr><td><a href="settings.html">Settings</a></td><td>Profile, password, organization, and API access</td></tr>
-  </tbody>
-</table>
+<div class="feature-cards">
+  <a href="dashboard.html" class="feature-card">
+    <div class="feature-card-icon">📊</div>
+    <div class="feature-card-name">Dashboard</div>
+    <div class="feature-card-desc">See your day at a glance — tasks due, AI usage, and weekly progress</div>
+    <div class="feature-card-arrow">→</div>
+  </a>
+  <a href="spaces.html" class="feature-card">
+    <div class="feature-card-icon">🗂️</div>
+    <div class="feature-card-name">Spaces</div>
+    <div class="feature-card-desc">Kanban boards for managing projects with your team or solo</div>
+    <div class="feature-card-arrow">→</div>
+  </a>
+  <a href="tasks.html" class="feature-card">
+    <div class="feature-card-icon">✅</div>
+    <div class="feature-card-name">Tasks</div>
+    <div class="feature-card-desc">Personal to-dos for things that don't belong to a project</div>
+    <div class="feature-card-arrow">→</div>
+  </a>
+  <a href="boards.html" class="feature-card">
+    <div class="feature-card-icon">🎨</div>
+    <div class="feature-card-name">Boards</div>
+    <div class="feature-card-desc">Free-form canvas for brainstorming, mood boards, and planning</div>
+    <div class="feature-card-arrow">→</div>
+  </a>
+  <a href="notes.html" class="feature-card">
+    <div class="feature-card-icon">📝</div>
+    <div class="feature-card-name">Notes</div>
+    <div class="feature-card-desc">Rich-text notes organized by category with images and search</div>
+    <div class="feature-card-arrow">→</div>
+  </a>
+  <a href="sheets.html" class="feature-card">
+    <div class="feature-card-icon">📋</div>
+    <div class="feature-card-name">Sheets</div>
+    <div class="feature-card-desc">Spreadsheets with formula support and 51 ready-to-use templates</div>
+    <div class="feature-card-arrow">→</div>
+  </a>
+  <a href="aria.html" class="feature-card">
+    <div class="feature-card-icon">🤖</div>
+    <div class="feature-card-name">ARIA AI</div>
+    <div class="feature-card-desc">Your AI assistant — creates tasks, organizes your workspace in plain language</div>
+    <div class="feature-card-arrow">→</div>
+  </a>
+  <a href="billing.html" class="feature-card">
+    <div class="feature-card-icon">💳</div>
+    <div class="feature-card-name">Billing</div>
+    <div class="feature-card-desc">Plans and pricing — free forever, or upgrade for more power</div>
+    <div class="feature-card-arrow">→</div>
+  </a>
+</div>
 
 <h2>Quick Start — Get Value in 5 Minutes</h2>
 <p><strong>Step 1 — Create your first Space</strong><br>Go to <strong>Spaces</strong> in the sidebar, then select <strong>New Space</strong>. Give it a name (e.g. "Work", "Personal Projects"). A Kanban board appears immediately with default columns.</p>
@@ -160,6 +219,17 @@ spaces: {
   <li><strong>Use attachments</strong> — drag files from your desktop directly onto an open task to attach them</li>
 </ul>
 
+<div class="tip-box">
+  <div class="tip-box-icon">💡</div>
+  <div class="tip-box-body"><strong>Did you know?</strong> You can ask ARIA to create and move tasks in a Space directly from the chat. Just say "Move all tasks from Backlog to In Progress" and ARIA will show you a confirmation before making any changes.</div>
+</div>
+
+<h2>Common Questions</h2>
+<div class="confused-box">
+  <strong>❓ Spaces vs Personal Tasks — what's the difference?</strong><br>
+  Spaces are Kanban boards for projects (especially team work). Personal Tasks are a simple list for your own to-dos that don't belong to any project. Use Spaces when something has multiple steps or involves other people; use Personal Tasks for quick reminders and solo action items.
+</div>
+
 <p class="doc-footer-link">Need help? <a href="faq.html">Visit the FAQ</a></p>
 `},
 
@@ -216,6 +286,11 @@ tasks: {
   <li>Choose the destination Space and column</li>
 </ol>
 <p>The task moves out of your personal list and onto the Kanban board.</p>
+
+<div class="tip-box">
+  <div class="tip-box-icon">💡</div>
+  <div class="tip-box-body"><strong>Did you know?</strong> You can type dates and priorities directly in a task title. "Call dentist Friday high priority" creates a task with the right due date and priority — no fields to fill in manually.</div>
+</div>
 
 <p class="doc-footer-link">Need help? <a href="faq.html">Visit the FAQ</a></p>
 `},
@@ -304,6 +379,11 @@ notes: {
 <p>Deleted notes go to the Trash, not permanent deletion. To delete a note: open the note → select the menu icon → <strong>Move to Trash</strong>.</p>
 <p><strong>Restoring</strong> — go to the Trash section (sidebar, bottom of Notes), find the note, and select <strong>Restore</strong>.</p>
 <p><strong>Auto-delete</strong> — notes in Trash are permanently deleted after <strong>30 days</strong>. After that they cannot be recovered.</p>
+
+<div class="tip-box">
+  <div class="tip-box-icon">💡</div>
+  <div class="tip-box-body"><strong>Did you know?</strong> ARIA can write notes for you. Say "Create a note called Meeting Summary with key points from today's standup" and ARIA will draft the content and save it — no copy-paste required.</div>
+</div>
 
 <p class="doc-footer-link">Need help? <a href="faq.html">Visit the FAQ</a></p>
 `},
@@ -411,6 +491,17 @@ boards: {
   <li>Select <strong>Export as PNG</strong></li>
   <li>The image downloads to your device</li>
 </ol>
+
+<div class="tip-box">
+  <div class="tip-box-icon">💡</div>
+  <div class="tip-box-body"><strong>Did you know?</strong> Double-clicking on an empty area of the canvas is the fastest way to add a new Note block. You don't need to open the toolbar first — just double-click and start typing.</div>
+</div>
+
+<h2>Common Questions</h2>
+<div class="confused-box">
+  <strong>❓ Boards vs Spaces — what's the difference?</strong><br>
+  Spaces are structured Kanban boards with columns and tasks — perfect for managing ongoing work. Boards are a free-form visual canvas for thinking and planning — no structure imposed. Use Spaces to track what needs to get done; use Boards to figure out what to do and how to approach it.
+</div>
 
 <p class="doc-footer-link">Need help? <a href="faq.html">Visit the FAQ</a></p>
 `},
@@ -540,6 +631,19 @@ aria: {
 <h3>Answer questions about your workspace</h3>
 <p>Ask anything about your current data.</p>
 <blockquote>"How many open tasks do I have in the Design space?"<br>"What tasks are due this week?"<br>"What notes do I have about the product roadmap?"</blockquote>
+
+<h2>Try These — Click to Copy</h2>
+<p>Select any prompt to copy it, then paste it directly into ARIA.</p>
+<div class="prompt-chips">
+  <button class="prompt-chip" data-prompt="Create a task called 'Prepare demo' in the Client Work space, due next Monday, high priority">📝 Create a task with deadline</button>
+  <button class="prompt-chip" data-prompt="What's in my Backlog column right now?">🔍 What's in my Backlog?</button>
+  <button class="prompt-chip" data-prompt="Move everything in Done to a new column called Archived">📦 Move tasks to Archived</button>
+  <button class="prompt-chip" data-prompt="Create a note called 'Product Ideas' with three bullet points about our next feature">💡 Create a Product Ideas note</button>
+  <button class="prompt-chip" data-prompt="I need to plan my week — I have a product review, three client calls, and a deadline on Friday. Help me organize this.">📅 Plan my week</button>
+  <button class="prompt-chip" data-prompt="Show me all tasks assigned to me across all spaces">👤 Show all my tasks</button>
+  <button class="prompt-chip" data-prompt="Create 5 tasks for launching a new website">🚀 Create launch tasks</button>
+  <button class="prompt-chip" data-prompt="What tasks are due this week?">⏰ What's due this week?</button>
+</div>
 
 <h2>Example Prompts That Work Well</h2>
 <ol>
@@ -956,6 +1060,221 @@ faq: {
 <p>For the full breakdown, see the <a href="aria.html">ARIA documentation</a>.</p>
 
 <p class="doc-footer-link">Need more help? Email <a href="mailto:uyowega3231123@gmail.com">uyowega3231123@gmail.com</a> or write on <a href="https://t.me/bloknotpr" target="_blank" rel="noopener noreferrer">Telegram @bloknotpr</a></p>
+`},
+
+/* ══════════════════════════════════════════
+   CHANGELOG
+══════════════════════════════════════════ */
+changelog: {
+  title: "What's New",
+  content: `
+<h1>What's New in Alpha Space</h1>
+<p>A running list of what we've shipped — new features, improvements, and fixes. Most recent changes appear first.</p>
+
+<div class="changelog-month">May 2026</div>
+
+<div class="changelog-entry">
+  <div class="changelog-entry-title"><span class="changelog-badge badge-new">New</span>Canvas Boards v2 — Connections, Minimap &amp; Export</div>
+  <ul>
+    <li>Draw connections between blocks by hovering a block edge and dragging to another block</li>
+    <li>Minimap in the bottom-right corner — click to jump anywhere on the canvas</li>
+    <li>Export any board as a PNG image from the toolbar menu</li>
+    <li>New Link block: paste a URL and get a rich preview card with title, description, and thumbnail</li>
+    <li>New Drawing block: embed a freehand sketch directly on the canvas</li>
+    <li>Undo/Redo support (⌘Z / ⌘Shift+Z) for all block operations</li>
+  </ul>
+</div>
+
+<div class="changelog-entry">
+  <div class="changelog-entry-title"><span class="changelog-badge badge-new">New</span>ARIA Board Agent</div>
+  <ul>
+    <li>ARIA can now build visual board layouts from a plain-language description</li>
+    <li>ARIA asks one clarifying question before placing blocks, so you always get what you intended</li>
+    <li>Supports all block types: Note, Text, Checklist, Image, Video, Link, Drawing</li>
+  </ul>
+</div>
+
+<div class="changelog-entry">
+  <div class="changelog-entry-title"><span class="changelog-badge badge-new">New</span>Notes Redesign</div>
+  <ul>
+    <li>Completely redesigned Notes with split-panel layout: category sidebar + note list + editor</li>
+    <li>10 emoji categories replace the old flat list</li>
+    <li>New pinning feature — pin important notes to the top of any category</li>
+    <li>Freehand drawing blocks embedded directly in notes</li>
+    <li>ARIA can suggest which category a note belongs to</li>
+  </ul>
+</div>
+
+<div class="changelog-entry">
+  <div class="changelog-entry-title"><span class="changelog-badge badge-improved">Improved</span>Offline Support</div>
+  <ul>
+    <li>Changes made while offline are now queued and automatically synced when you reconnect</li>
+    <li>An amber banner at the top of the page shows when you're offline</li>
+    <li>Previously loaded data (tasks, notes, boards, sheets) remains accessible offline</li>
+  </ul>
+</div>
+
+<div class="changelog-month">April 2026</div>
+
+<div class="changelog-entry">
+  <div class="changelog-entry-title"><span class="changelog-badge badge-new">New</span>Canvas Boards — Infinite Canvas</div>
+  <ul>
+    <li>Replaced the old Moodboard with a full infinite canvas (8,000 × 8,000 pixels)</li>
+    <li>Six block types: Note, Text, Checklist, Image, Video, Section</li>
+    <li>Smooth pan and zoom with mouse wheel, trackpad, or keyboard</li>
+    <li>Drag to resize any block, drag to move anywhere on the canvas</li>
+  </ul>
+</div>
+
+<div class="changelog-entry">
+  <div class="changelog-entry-title"><span class="changelog-badge badge-improved">Improved</span>Spaces Performance</div>
+  <ul>
+    <li>Kanban boards now render and respond much faster on large task lists</li>
+    <li>Drag and drop no longer causes visual jitter or duplicate updates</li>
+    <li>Tasks load in the background using the new offline-first cache</li>
+  </ul>
+</div>
+
+<div class="changelog-entry">
+  <div class="changelog-entry-title"><span class="changelog-badge badge-fixed">Fixed</span>Various Bug Fixes</div>
+  <ul>
+    <li>Fixed: ARIA could occasionally create tasks in the wrong Space</li>
+    <li>Fixed: Billing page showed incorrect usage numbers after upgrade</li>
+    <li>Fixed: Sheet formulas referencing empty cells could throw errors</li>
+    <li>Fixed: Notes search didn't find content in the middle of a paragraph</li>
+  </ul>
+</div>
+
+<p class="doc-footer-link">Have feedback? <a href="mailto:uyowega3231123@gmail.com">Email us</a> or message <a href="https://t.me/bloknotpr" target="_blank" rel="noopener noreferrer">@bloknotpr on Telegram</a></p>
+`},
+
+/* ══════════════════════════════════════════
+   GUIDES
+══════════════════════════════════════════ */
+guides: {
+  title: 'Guides',
+  content: `
+<h1>Guides</h1>
+<p>Step-by-step walkthroughs for common ways to use Alpha Space. Pick the scenario that fits you best.</p>
+
+<div class="guide-cards">
+  <a href="#solo-guide" class="guide-card">
+    <div class="guide-card-icon">👤</div>
+    <div class="guide-card-title">Get organized as a solo user</div>
+    <div class="guide-card-desc">Set up your workspace, capture tasks, write notes, and use ARIA to stay on top of everything</div>
+    <div class="guide-card-time">~5 min read</div>
+  </a>
+  <a href="#team-guide" class="guide-card">
+    <div class="guide-card-icon">👥</div>
+    <div class="guide-card-title">Manage a team project</div>
+    <div class="guide-card-desc">Create a shared Space, invite teammates, use Boards for planning, and track progress together</div>
+    <div class="guide-card-time">~6 min read</div>
+  </a>
+  <a href="#launch-guide" class="guide-card">
+    <div class="guide-card-icon">🚀</div>
+    <div class="guide-card-title">Plan a product launch</div>
+    <div class="guide-card-desc">Combine Spaces, Boards, Notes, and ARIA to take a feature from idea to shipped</div>
+    <div class="guide-card-time">~7 min read</div>
+  </a>
+  <a href="#study-guide" class="guide-card">
+    <div class="guide-card-icon">📚</div>
+    <div class="guide-card-title">Study smarter</div>
+    <div class="guide-card-desc">Use Notes with categories, personal tasks, and ARIA as a study buddy to learn more effectively</div>
+    <div class="guide-card-time">~4 min read</div>
+  </a>
+</div>
+
+<hr>
+
+<h2 id="solo-guide">Guide 1: Get Organized as a Solo User</h2>
+<p>This guide gets you from zero to a working personal system in under 10 minutes.</p>
+
+<h3>Step 1 — Set up your task list</h3>
+<p>Go to <strong>Tasks</strong> in the sidebar. This is your personal to-do list — separate from any team projects. Type your first task and press Enter. Try typing something like "Review emails tomorrow" and watch Alpha Space automatically set the due date.</p>
+<p>Add 5–10 things you need to do this week. Don't worry about organizing them yet — just get them out of your head.</p>
+
+<h3>Step 2 — Create a Space for your main project</h3>
+<p>Go to <strong>Spaces</strong> and create a Space for your most important ongoing project — could be work, a side project, or anything with multiple steps. Add your first few tasks to the relevant columns.</p>
+<p>Rename the default columns to match your workflow. "Research", "In Progress", "Review", "Done" works well for most projects.</p>
+
+<h3>Step 3 — Start a note for ideas and reference</h3>
+<p>Go to <strong>Notes</strong> and create a note in the Ideas category. Use it as a capture device — whenever you have a thought related to your project, paste it here. Notes have full formatting, so you can organize as you go.</p>
+
+<h3>Step 4 — Ask ARIA to help you plan</h3>
+<p>Go to <strong>ARIA</strong> and try:</p>
+<blockquote>"I have a project called [your project]. Can you help me create 5 tasks for the first week?"</blockquote>
+<p>ARIA will propose tasks with titles and due dates. Review the proposal and select <strong>Apply</strong> to add them to your Space.</p>
+
+<h3>Step 5 — Check the Dashboard each morning</h3>
+<p>The <strong>Dashboard</strong> shows you everything that matters at a glance: tasks due today, upcoming deadlines, and your progress this week. Make it your start-of-day habit.</p>
+
+<div class="tip-box">
+  <div class="tip-box-icon">💡</div>
+  <div class="tip-box-body"><strong>Pro tip:</strong> Use the AI panel (the glowing button on your Space page) to quickly create tasks without leaving your Kanban board. Say "Add a task called X to In Progress" and it appears instantly.</div>
+</div>
+
+<hr>
+
+<h2 id="team-guide">Guide 2: Manage a Team Project</h2>
+<p>This guide shows how to set up a shared workspace for a team project from scratch.</p>
+
+<h3>Step 1 — Invite your team</h3>
+<p>Go to <strong>Settings → Organization</strong> and select <strong>Invite member</strong>. Enter their email address and choose their role (Admin or Member). They'll receive an invite email and can join immediately.</p>
+
+<h3>Step 2 — Create a Space for the project</h3>
+<p>Go to <strong>Spaces</strong> and create a new Space. Set up columns that match your team's process — for example: "Backlog → In Progress → Review → Done".</p>
+<p>Add your first batch of tasks. Assign tasks to team members using the Assignee field inside each task.</p>
+
+<h3>Step 3 — Use a Board for planning</h3>
+<p>Go to <strong>Boards</strong> and create a board called "Project Roadmap" (or similar). Use Note blocks for phases, Text blocks for descriptions, and draw connections between related ideas.</p>
+<p>Share your screen with the team and use the board as a visual aid during planning meetings — it updates in real time for everyone.</p>
+
+<h3>Step 4 — Track progress on the Dashboard</h3>
+<p>The Team Dashboard shows tasks by assignee, recent activity, and team members' progress. Check it at the start of standup to see what everyone is working on.</p>
+
+<h3>Step 5 — Use ARIA for batch operations</h3>
+<p>When priorities shift, ask ARIA to reorganize: "Move all tasks assigned to Alex from In Progress back to Backlog." ARIA handles it in one action instead of you dragging cards one by one.</p>
+
+<hr>
+
+<h2 id="launch-guide">Guide 3: Plan a Product Launch</h2>
+<p>How to use Alpha Space end-to-end for taking a feature from idea to shipped.</p>
+
+<h3>Phase 1 — Capture ideas on a Board</h3>
+<p>Create a Board called "Launch Plan". Add Note blocks for each major area: Marketing, Product, Engineering, Design. Use connections to show dependencies. Use the ARIA board agent to generate an initial layout: <em>"Create a product launch roadmap with phases: research, design, build, ship, post-launch."</em></p>
+
+<h3>Phase 2 — Break it into tasks</h3>
+<p>Create a Space called "Launch". Add columns: "Backlog → Design → Build → QA → Done". Ask ARIA: <em>"Create 10 tasks for a product launch covering design, engineering, and marketing."</em> Review the proposal, then distribute tasks to team members.</p>
+
+<h3>Phase 3 — Document in Notes</h3>
+<p>Create notes for each major document: Product Brief, Technical Spec, Press Release draft. Keep them in the Projects category. Link to them from ARIA: <em>"What's in my Product Brief note?"</em></p>
+
+<h3>Phase 4 — Track in Sheets</h3>
+<p>Use the Launch Checklist or Marketing Calendar preset in Sheets to track launch activities with dates and owners. This gives you a second view alongside the Kanban board.</p>
+
+<hr>
+
+<h2 id="study-guide">Guide 4: Study Smarter</h2>
+<p>How to use Alpha Space as a personal learning system.</p>
+
+<h3>Step 1 — Capture notes by subject</h3>
+<p>Go to <strong>Notes</strong> and create a note for each subject or course. Use the Learning category. Write summaries after each session — even 3 bullet points helps retention.</p>
+
+<h3>Step 2 — Turn action items into tasks</h3>
+<p>While studying, when you identify something you need to do ("re-read chapter 4", "watch that lecture"), add it to <strong>Tasks</strong> with a due date. Don't let study to-dos get lost in your notes.</p>
+
+<h3>Step 3 — Use a Board for visual thinking</h3>
+<p>For complex topics — especially ones with many connected concepts — create a Board and map the relationships. Place key terms as Note blocks and draw connections between related ideas.</p>
+
+<h3>Step 4 — Quiz yourself with ARIA</h3>
+<p>Open ARIA and paste in content from your notes: <em>"Based on this text: [paste your notes]. Ask me 5 quiz questions and then tell me the answers."</em> ARIA works as a study buddy for testing your knowledge.</p>
+
+<div class="tip-box">
+  <div class="tip-box-icon">💡</div>
+  <div class="tip-box-body"><strong>Did you know?</strong> ARIA remembers context within a conversation. You don't need to re-explain which subject you're studying — just reference it: "What else should I know about that topic?" and ARIA understands.</div>
+</div>
+
+<p class="doc-footer-link">Need help? <a href="faq.html">Visit the FAQ</a> · <a href="aria.html">Learn about ARIA</a></p>
 `}
 
 }; /* end window.DOCS */

@@ -1,6 +1,8 @@
 /* ─────────────────────────────────────────────
    Alpha Space Docs — App Shell
-   Renders layout, handles search + mobile menu
+   Phase 1-2: dark mode, progress bar, reading
+   time, anchor links, copy buttons, search
+   highlighting, prompt chips
 ───────────────────────────────────────────── */
 (function () {
   'use strict';
@@ -9,7 +11,10 @@
   var NAV = [
     {
       section: 'Getting Started',
-      items: [{ key: 'index', label: 'Overview' }]
+      items: [
+        { key: 'index',     label: 'Overview' },
+        { key: 'guides',    label: 'Guides' }
+      ]
     },
     {
       section: 'Features',
@@ -26,34 +31,37 @@
     {
       section: 'Account',
       items: [
-        { key: 'billing',  label: 'Billing & Plans' },
-        { key: 'settings', label: 'Settings' }
+        { key: 'billing',   label: 'Billing & Plans' },
+        { key: 'settings',  label: 'Settings' }
       ]
     },
     {
       section: 'Reference',
       items: [
         { key: 'shortcuts', label: 'Keyboard Shortcuts' },
-        { key: 'faq',       label: 'FAQ' }
+        { key: 'faq',       label: 'FAQ' },
+        { key: 'changelog', label: "What's New" }
       ]
     }
   ];
 
   var PAGE_ORDER = [
-    'index', 'dashboard', 'spaces', 'tasks', 'notes',
+    'index', 'guides', 'dashboard', 'spaces', 'tasks', 'notes',
     'boards', 'sheets', 'aria', 'billing', 'settings',
-    'shortcuts', 'faq'
+    'shortcuts', 'faq', 'changelog'
   ];
 
   /* ── SVG icons ── */
   var ICON_SEARCH = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
+  var ICON_MOON   = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  var ICON_SUN    = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
 
   /* ── Build sidebar nav HTML ── */
   function buildNav(activeKey) {
     return NAV.map(function (group) {
       var itemsHtml = group.items.map(function (item) {
         var cls = 'nav-item' + (item.key === activeKey ? ' active' : '');
-        return '<a href="' + item.key + '.html" class="' + cls + '" data-page="' + item.key + '">' + item.label + '</a>';
+        return '<a href="' + item.key + '.html" class="' + cls + '">' + item.label + '</a>';
       }).join('');
       return '<div class="nav-section"><div class="nav-section-title">' + group.section + '</div>' + itemsHtml + '</div>';
     }).join('');
@@ -79,8 +87,11 @@
 
     document.title = doc.title + ' — Alpha Space Docs';
 
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+
     var html =
-      /* ─ Header ─ */
+      '<div id="read-progress"></div>' +
+
       '<header class="site-header">' +
         '<div class="header-left">' +
           '<button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>' +
@@ -97,11 +108,13 @@
           '</button>' +
         '</div>' +
         '<div class="header-right">' +
+          '<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">' +
+            (isDark ? ICON_SUN : ICON_MOON) +
+          '</button>' +
           '<a href="https://alpha-space-seven.vercel.app" class="open-app-btn" target="_blank" rel="noopener noreferrer">Open App →</a>' +
         '</div>' +
       '</header>' +
 
-      /* ─ Layout body ─ */
       '<div class="layout-body">' +
         '<aside class="sidebar" id="sidebar">' +
           '<nav class="sidebar-nav">' + buildNav(pageKey) + '</nav>' +
@@ -143,10 +156,8 @@
         '</main>' +
       '</div>' +
 
-      /* ─ Mobile overlay ─ */
       '<div class="sidebar-overlay" id="sidebar-overlay"></div>' +
 
-      /* ─ Search modal ─ */
       '<div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-hidden="true">' +
         '<div class="search-modal-backdrop" id="search-backdrop"></div>' +
         '<div class="search-modal-inner">' +
@@ -164,6 +175,12 @@
     setupSearch();
     setupMobileMenu();
     setupFeedback();
+    setupProgressBar();
+    setupReadingTime();
+    setupAnchorLinks();
+    setupCopyButtons();
+    setupPromptChips();
+    setupThemeToggle();
   }
 
   /* ── Search ── */
@@ -175,12 +192,15 @@
 
   function buildIndex() {
     return Object.keys(window.DOCS).map(function (key) {
-      return {
-        key: key,
-        title: window.DOCS[key].title,
-        text: stripTags(window.DOCS[key].content)
-      };
+      return { key: key, title: window.DOCS[key].title, text: stripTags(window.DOCS[key].content) };
     });
+  }
+
+  function highlightMatch(str, q) {
+    if (!q || !str) return esc(str || '');
+    var idx = str.toLowerCase().indexOf(q.toLowerCase());
+    if (idx === -1) return esc(str);
+    return esc(str.slice(0, idx)) + '<mark>' + esc(str.slice(idx, idx + q.length)) + '</mark>' + esc(str.slice(idx + q.length));
   }
 
   function search(q, index) {
@@ -230,19 +250,15 @@
     trigger.addEventListener('click', open);
     backdrop.addEventListener('click', close);
     closeBtn.addEventListener('click', close);
-
-    /* Delegate clicks on dynamically rendered results */
     results.addEventListener('click', function (e) {
-      var el = e.target.closest('.search-result');
-      if (el) { close(); }
+      if (e.target.closest('.search-result')) close();
     });
-
     document.addEventListener('keydown', function (e) {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
         modal.classList.contains('open') ? close() : open();
       }
-      if (e.key === 'Escape' && modal.classList.contains('open')) { close(); }
+      if (e.key === 'Escape' && modal.classList.contains('open')) close();
     });
 
     input.addEventListener('input', function () {
@@ -258,8 +274,8 @@
       }
       results.innerHTML = hits.map(function (hit) {
         return '<a href="' + hit.key + '.html" class="search-result">' +
-          '<div class="search-result-title">' + esc(hit.title) + '</div>' +
-          (hit.excerpt ? '<div class="search-result-excerpt">' + esc(hit.excerpt) + '</div>' : '') +
+          '<div class="search-result-title">' + highlightMatch(hit.title, q) + '</div>' +
+          (hit.excerpt ? '<div class="search-result-excerpt">' + highlightMatch(hit.excerpt, q) + '</div>' : '') +
         '</a>';
       }).join('');
     });
@@ -270,11 +286,9 @@
     var toggle  = document.getElementById('menu-toggle');
     var sidebar = document.getElementById('sidebar');
     var overlay = document.getElementById('sidebar-overlay');
-
     function openSb()  { sidebar.classList.add('open'); overlay.classList.add('visible'); }
     function closeSb() { sidebar.classList.remove('open'); overlay.classList.remove('visible'); }
-
-    toggle.addEventListener('click',  function () { sidebar.classList.contains('open') ? closeSb() : openSb(); });
+    toggle.addEventListener('click', function () { sidebar.classList.contains('open') ? closeSb() : openSb(); });
     overlay.addEventListener('click', closeSb);
   }
 
@@ -282,18 +296,141 @@
   function setupFeedback() {
     var yes = document.getElementById('fb-yes');
     var no  = document.getElementById('fb-no');
-    function done(btn) {
-      yes.disabled = no.disabled = true;
-      btn.textContent = 'Thanks!';
-      btn.classList.add('active');
-    }
+    function done(btn) { yes.disabled = no.disabled = true; btn.textContent = 'Thanks!'; btn.classList.add('active'); }
     yes.addEventListener('click', function () { done(yes); });
     no.addEventListener('click',  function () { done(no); });
   }
 
+  /* ── Reading progress bar ── */
+  function setupProgressBar() {
+    var bar = document.getElementById('read-progress');
+    if (!bar) return;
+    function update() {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docH = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      bar.style.width = (docH > 0 ? Math.min(100, (scrollTop / docH) * 100) : 0) + '%';
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
+  /* ── Reading time ── */
+  function setupReadingTime() {
+    var content = document.querySelector('.doc-content');
+    if (!content) return;
+    var h1 = content.querySelector('h1');
+    if (!h1) return;
+    var words = ((content.textContent || content.innerText || '').match(/\S+/g) || []).length;
+    var mins = Math.max(1, Math.round(words / 200));
+    var badge = document.createElement('p');
+    badge.className = 'reading-time';
+    badge.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>&nbsp;' + mins + ' min read';
+    h1.insertAdjacentElement('afterend', badge);
+  }
+
+  /* ── Anchor links on headings ── */
+  function slugify(str) {
+    return (str || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  }
+
+  function setupAnchorLinks() {
+    var content = document.querySelector('.doc-content');
+    if (!content) return;
+    content.querySelectorAll('h2, h3').forEach(function (h) {
+      var slug = slugify(h.textContent || '');
+      h.id = slug;
+      var a = document.createElement('a');
+      a.href = '#' + slug;
+      a.className = 'anchor-link';
+      a.textContent = '#';
+      a.title = 'Link to section';
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.history.pushState(null, '', '#' + slug);
+        h.scrollIntoView({ behavior: 'smooth' });
+      });
+      h.appendChild(a);
+    });
+    if (window.location.hash) {
+      var target = document.getElementById(window.location.hash.slice(1));
+      if (target) setTimeout(function () { target.scrollIntoView({ behavior: 'smooth' }); }, 120);
+    }
+  }
+
+  /* ── Copy buttons on pre blocks ── */
+  function setupCopyButtons() {
+    document.querySelectorAll('.doc-content pre').forEach(function (pre) {
+      var wrap = document.createElement('div');
+      wrap.className = 'pre-wrap';
+      pre.parentNode.insertBefore(wrap, pre);
+      wrap.appendChild(pre);
+      var btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.textContent = 'Copy';
+      btn.addEventListener('click', function () {
+        var text = pre.textContent || '';
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).then(function () { flashCopy(btn); });
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;';
+          document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+          document.body.removeChild(ta); flashCopy(btn);
+        }
+      });
+      wrap.appendChild(btn);
+    });
+  }
+
+  function flashCopy(btn) {
+    btn.textContent = 'Copied!'; btn.classList.add('copied');
+    setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  }
+
+  /* ── Prompt chips click-to-copy ── */
+  function setupPromptChips() {
+    document.querySelectorAll('.prompt-chip').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var text = chip.getAttribute('data-prompt') || chip.textContent.trim();
+        var origHtml = chip.innerHTML;
+        function flash() {
+          chip.innerHTML = '✓ Copied! Paste into ARIA →';
+          chip.classList.add('copied');
+          setTimeout(function () { chip.innerHTML = origHtml; chip.classList.remove('copied'); }, 2000);
+        }
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).then(flash);
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;';
+          document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+          document.body.removeChild(ta); flash();
+        }
+      });
+    });
+  }
+
+  /* ── Dark mode toggle ── */
+  function setupThemeToggle() {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('alpha-docs-theme', 'light');
+        btn.innerHTML = ICON_MOON;
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('alpha-docs-theme', 'dark');
+        btn.innerHTML = ICON_SUN;
+      }
+    });
+  }
+
   /* ── HTML-escape helper ── */
   function esc(str) {
-    return String(str)
+    return String(str || '')
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
@@ -305,6 +442,8 @@
     var pageKey = document.body.getAttribute('data-page');
     if (!pageKey) return;
     if (!window.DOCS) { setTimeout(init, 50); return; }
+    var saved = localStorage.getItem('alpha-docs-theme');
+    if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
     render(pageKey);
   }
 
