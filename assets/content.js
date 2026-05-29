@@ -485,6 +485,16 @@ boards: {
 </ol>
 <p>You can move, resize, or delete any block ARIA creates — the result is fully editable.</p>
 
+<h2>Public Sharing</h2>
+<p>You can share a Board with anyone — even people who don't have an Alpha Space account — via a public link.</p>
+<ol>
+  <li>Open the Board you want to share</li>
+  <li>Select the <strong>Share</strong> button in the top toolbar</li>
+  <li>Select <strong>Create public link</strong></li>
+  <li>Copy the link and send it to anyone</li>
+</ol>
+<p>Recipients can view the full board canvas (pan, zoom, read all blocks) but cannot make any changes. To revoke access, return to the Share menu and disable the public link.</p>
+
 <h2>Exporting a Board</h2>
 <ol>
   <li>Select the menu icon (three dots) in the top toolbar</li>
@@ -581,6 +591,27 @@ sheets: {
 <p><strong>Add a column</strong> — right-click on a column header and select <strong>Insert column left/right</strong>.</p>
 <p><strong>Delete a column</strong> — right-click on a column header and select <strong>Delete column</strong>.</p>
 
+<h2>Multiple Sheets (Tabs)</h2>
+<p>A single spreadsheet file can contain multiple sheets, similar to tabs in a workbook. The sheet tab bar appears at the bottom of the editor.</p>
+<ul>
+  <li><strong>Add a sheet</strong> — select the <strong>+</strong> button at the right end of the tab bar and type a name</li>
+  <li><strong>Rename a sheet</strong> — double-click the tab name to edit it inline</li>
+  <li><strong>Reorder sheets</strong> — drag a tab left or right along the tab bar</li>
+  <li><strong>Switch sheets</strong> — select any tab to switch to it; data in each sheet is independent</li>
+</ul>
+
+<h2>Conditional Formatting</h2>
+<p>Conditional formatting changes the visual appearance of cells automatically based on their value. Use it to highlight overdue dates, flag values above a threshold, or color-code statuses.</p>
+<p><strong>To add a rule:</strong></p>
+<ol>
+  <li>Select a column header to open its settings</li>
+  <li>Select <strong>Conditional formatting</strong></li>
+  <li>Choose a condition (e.g. "greater than", "equals", "contains")</li>
+  <li>Set the value and choose a highlight color</li>
+  <li>Select <strong>Save</strong> — all cells matching the condition are highlighted immediately</li>
+</ol>
+<p>Multiple rules can apply to the same column. Rules are evaluated in order; the first matching rule wins.</p>
+
 <h2>AI Query Input</h2>
 <p>Each Sheet has an AI input bar at the top. Type a question about your data in plain language and ARIA will analyze the sheet and answer.</p>
 <ul>
@@ -608,7 +639,7 @@ aria: {
 <h2>Opening ARIA</h2>
 <p>ARIA is available in two modes:</p>
 <p><strong>Full page</strong> — select <strong>ARIA</strong> in the sidebar to open a dedicated chat page. Best for longer conversations and complex planning sessions.</p>
-<p><strong>Slide-out panel</strong> — on any Spaces page, select the ARIA button (the glowing icon in the bottom-right corner of the page). A panel slides in from the right without leaving your current page. Best for quick actions while you're working.</p>
+<p><strong>Slide-out panel</strong> — press <kbd>Ctrl+Shift+A</kbd> (or <kbd>⌘+Shift+A</kbd> on Mac) from any page. A panel slides in from the right without leaving your current context. Press <kbd>Esc</kbd> to close it. Best for quick actions while you're working in Spaces or other sections.</p>
 
 <h2>What ARIA Can Do</h2>
 
@@ -908,8 +939,9 @@ shortcuts: {
 <table>
   <thead><tr><th>Keys</th><th>Action</th></tr></thead>
   <tbody>
-    <tr><td><kbd>⌘K</kbd></td><td>Open command palette / search</td></tr>
+    <tr><td><kbd>⌘K</kbd> / <kbd>Ctrl+K</kbd></td><td>Open command palette / search</td></tr>
     <tr><td><kbd>?</kbd></td><td>Show keyboard shortcuts</td></tr>
+    <tr><td><kbd>⌘+Shift+A</kbd> / <kbd>Ctrl+Shift+A</kbd></td><td>Toggle ARIA slide-out panel</td></tr>
   </tbody>
 </table>
 
@@ -1074,6 +1106,32 @@ changelog: {
 <div class="changelog-month">May 2026</div>
 
 <div class="changelog-entry">
+  <div class="changelog-entry-title"><span class="changelog-badge badge-improved">Improved</span>Zero-flash page navigation</div>
+  <ul>
+    <li>Sidebar and header now persist across all page transitions — no more white flash when switching between Dashboard, Spaces, Notes, Boards, and Sheets</li>
+    <li>All page JS bundles are prefetched in the background immediately after sign-in, so the first click to any section is instant</li>
+    <li>Page transition animation now applies only to the content area, not the entire shell</li>
+  </ul>
+</div>
+
+<div class="changelog-entry">
+  <div class="changelog-entry-title"><span class="changelog-badge badge-new">New</span>Conditional Formatting in Sheets</div>
+  <ul>
+    <li>Highlight cells automatically based on their value — overdue dates, values over a threshold, specific statuses</li>
+    <li>Multiple rules per column, evaluated in order</li>
+    <li>Configure rules from the column header settings panel</li>
+  </ul>
+</div>
+
+<div class="changelog-entry">
+  <div class="changelog-entry-title"><span class="changelog-badge badge-new">New</span>Multiple Sheets (tabs) per spreadsheet</div>
+  <ul>
+    <li>Add, rename, reorder, and switch between multiple sheets inside a single spreadsheet file</li>
+    <li>Drag tabs to reorder; double-click to rename inline</li>
+  </ul>
+</div>
+
+<div class="changelog-entry">
   <div class="changelog-entry-title"><span class="changelog-badge badge-new">New</span>Canvas Boards v2 — Connections, Minimap &amp; Export</div>
   <ul>
     <li>Draw connections between blocks by hovering a block edge and dragging to another block</li>
@@ -1081,7 +1139,7 @@ changelog: {
     <li>Export any board as a PNG image from the toolbar menu</li>
     <li>New Link block: paste a URL and get a rich preview card with title, description, and thumbnail</li>
     <li>New Drawing block: embed a freehand sketch directly on the canvas</li>
-    <li>Undo/Redo support (⌘Z / ⌘Shift+Z) for all block operations</li>
+    <li>Public sharing: generate a read-only link to share any board with people outside your workspace</li>
   </ul>
 </div>
 
