@@ -15,8 +15,8 @@ index: {
   <span class="hero-tag">Spaces</span>
   <span class="hero-tag">Boards</span>
   <span class="hero-tag">Notes</span>
-  <span class="hero-tag">Sheets</span>
-  <span class="hero-tag">AI</span>
+  <span class="hero-tag">ARIA</span>
+  <span class="hero-tag">Telegram</span>
 </div>
 <p class="hero-subtitle">Your all-in-one workspace for staying organized, collaborating with your team, and getting more done with the help of AI.</p>
 
@@ -52,8 +52,8 @@ index: {
   </a>
   <a href="tasks.html" class="feature-card">
     <div class="feature-card-icon">✅</div>
-    <div class="feature-card-name">Tasks</div>
-    <div class="feature-card-desc">Personal to-dos for things that don't belong to a project</div>
+    <div class="feature-card-name">Personal Tasks</div>
+    <div class="feature-card-desc">Your own to-dos, separate from team Spaces — created by you or by ARIA</div>
     <div class="feature-card-arrow">→</div>
   </a>
   <a href="boards.html" class="feature-card">
@@ -68,16 +68,16 @@ index: {
     <div class="feature-card-desc">Rich-text notes organized by category with images and search</div>
     <div class="feature-card-arrow">→</div>
   </a>
-  <a href="sheets.html" class="feature-card">
-    <div class="feature-card-icon">📋</div>
-    <div class="feature-card-name">Sheets</div>
-    <div class="feature-card-desc">Spreadsheets with formula support and 51 ready-to-use templates</div>
-    <div class="feature-card-arrow">→</div>
-  </a>
   <a href="aria.html" class="feature-card">
     <div class="feature-card-icon">🤖</div>
     <div class="feature-card-name">ARIA AI</div>
     <div class="feature-card-desc">Your AI assistant — creates tasks, organizes your workspace in plain language</div>
+    <div class="feature-card-arrow">→</div>
+  </a>
+  <a href="telegram.html" class="feature-card">
+    <div class="feature-card-icon">✈️</div>
+    <div class="feature-card-name">Telegram Bot</div>
+    <div class="feature-card-desc">Capture tasks, notes, and files, and check your workspace from a chat</div>
     <div class="feature-card-arrow">→</div>
   </a>
   <a href="billing.html" class="feature-card">
@@ -95,7 +95,7 @@ index: {
 
 <h2>Find Your Way Around</h2>
 <ul>
-  <li><strong>Sidebar</strong> (left): Dashboard · Spaces · Boards · Notes · Sheets · ARIA</li>
+  <li><strong>Sidebar</strong> (left): Dashboard · Folders · Spaces · Boards · Notes · Documents · ARIA</li>
   <li><strong>Header</strong>: Page title, search (⌘K), and account menu</li>
   <li><strong>Command palette</strong>: Press <strong>⌘K</strong> (or <strong>Ctrl+K</strong>) from anywhere to jump to any page or action</li>
   <li>Press <strong>?</strong> at any time to see all keyboard shortcuts</li>
@@ -239,57 +239,33 @@ spaces: {
 tasks: {
   title: 'Personal Tasks',
   content: `
-<h1>Tasks — Personal Task List</h1>
-<p>Personal tasks are things that belong to you, not to a project. They live in one place and don't clutter your Kanban boards.</p>
-<p>Use personal tasks for quick to-dos, reminders, and anything that doesn't fit a specific Space — like "Call dentist", "Read chapter 4", or "Draft Q3 review".</p>
+<h1>Personal Tasks</h1>
+<p>A personal task is a regular task flagged as yours alone — not tied to a Space, not visible to teammates. There's no separate "Tasks" page to manage them by hand; personal tasks show up right in your <strong>Solo Dashboard</strong> alongside the rest of your day.</p>
 
 <h2>Space Tasks vs Personal Tasks</h2>
 <table>
   <thead><tr><th></th><th>Space Tasks</th><th>Personal Tasks</th></tr></thead>
   <tbody>
-    <tr><td><strong>Lives in</strong></td><td>A Kanban board column</td><td>Your personal task list</td></tr>
+    <tr><td><strong>Lives in</strong></td><td>A Kanban board column</td><td>Your Solo Dashboard</td></tr>
     <tr><td><strong>Has assignee?</strong></td><td>Yes (team plans)</td><td>No</td></tr>
-    <tr><td><strong>Appears on</strong></td><td>The Space board</td><td>Your Tasks page</td></tr>
-    <tr><td><strong>Visible to team?</strong></td><td>Yes</td><td>No</td></tr>
+    <tr><td><strong>Visible to team?</strong></td><td>Yes</td><td>No — yours alone</td></tr>
   </tbody>
 </table>
 
-<h2>Sections Explained</h2>
-<p>Your task list is divided into three sections:</p>
-<p><strong>Today</strong> — tasks with a due date of today, plus tasks you've manually moved here. Start your morning here.</p>
-<p><strong>Upcoming</strong> — tasks due in the future, sorted by due date. Plan your week from this section.</p>
-<p><strong>Done</strong> — tasks you've completed. They stay here so you have a record. Completed tasks move here automatically when you check them off.</p>
-
 <h2>Creating a Personal Task</h2>
-<p><strong>The quick way</strong> — type in the input field at the top of the task list and press Enter.</p>
-<p><strong>With natural language</strong> — you can include details right in the title and Alpha Space will parse them:</p>
-<ul>
-  <li><code>"finish report tomorrow high priority"</code> → creates a task due tomorrow with High priority</li>
-  <li><code>"review designs Friday"</code> → creates a task due this Friday</li>
-  <li><code>"call client urgent"</code> → creates a task with Urgent priority</li>
-</ul>
-<p><strong>Supported natural language patterns:</strong></p>
-<ul>
-  <li>Days of the week: "Monday", "Tuesday", "Friday", etc.</li>
-  <li>Relative days: "today", "tomorrow"</li>
-  <li>Priority keywords: "low", "medium", "high", "urgent"</li>
-</ul>
+<p>Personal tasks are created through <strong>ARIA</strong>, not typed into a dedicated list. Open ARIA and describe what you need to do — ARIA sorts genuinely personal, project-less items into your personal task list and proposes the rest as Space tasks, showing you both before anything is saved.</p>
+<blockquote>"I have these things to handle: call the dentist, finish the Q3 report, read chapter 4"</blockquote>
+<p>Review ARIA's proposal and select <strong>Apply</strong> — personal items land in your Solo Dashboard, project items go where they belong.</p>
 
-<h2>Toggling Done</h2>
-<p>Select the circle on the left side of any task to mark it complete. The task moves to the <strong>Done</strong> section. Select it again to bring it back.</p>
+<h2>Where They Show Up</h2>
+<p>Open your <strong>Dashboard</strong> — if you're not part of a team yet, you'll see the Solo Dashboard, which lists your personal tasks alongside due dates, active Spaces, and your AI usage for the day. See the <a href="dashboard.html">Dashboard documentation</a> for the full breakdown.</p>
 
-<h2>Assigning a Personal Task to a Space</h2>
-<p>On team plans, you can convert a personal task into a Space task:</p>
-<ol>
-  <li>Open the task by selecting its title</li>
-  <li>Select <strong>Move to Space</strong> in the task detail</li>
-  <li>Choose the destination Space and column</li>
-</ol>
-<p>The task moves out of your personal list and onto the Kanban board.</p>
+<h2>Prefer a Team-Style Board Instead?</h2>
+<p>If you'd rather manage your own to-dos on a Kanban board (columns, drag-and-drop, priorities), just create a <strong>Space</strong> for yourself — e.g. "Personal Projects" — and use it exactly like a team would. Spaces work the same whether you're solo or part of an organization.</p>
 
 <div class="tip-box">
   <div class="tip-box-icon">💡</div>
-  <div class="tip-box-body"><strong>Did you know?</strong> You can type dates and priorities directly in a task title. "Call dentist Friday high priority" creates a task with the right due date and priority — no fields to fill in manually.</div>
+  <div class="tip-box-body"><strong>Did you know?</strong> You don't have to sort things yourself. Dump a messy list of things on your mind into ARIA and it will figure out what's a personal to-do and what belongs in a Space — you just confirm.</div>
 </div>
 
 <p class="doc-footer-link">Need help? <a href="faq.html">Visit the FAQ</a></p>
@@ -517,112 +493,73 @@ boards: {
 `},
 
 /* ══════════════════════════════════════════
-   SHEETS
+   TELEGRAM BOT
 ══════════════════════════════════════════ */
-sheets: {
-  title: 'Sheets',
+telegram: {
+  title: 'Telegram Bot',
   content: `
-<h1>Sheets — Spreadsheets</h1>
-<p>Sheets is a full spreadsheet tool built into Alpha Space. Use it to track data, build budgets, manage lists, or analyze information — without leaving your workspace.</p>
+<h1>Telegram Bot</h1>
+<p>Alpha Space has a Telegram bot that lets you capture tasks, notes, and files, and check in on your workspace — straight from a chat, without opening the app.</p>
 
-<h2>Creating a Sheet</h2>
+<h2>Connecting Your Account</h2>
 <ol>
-  <li>Select <strong>Sheets</strong> in the sidebar</li>
-  <li>Select <strong>+ New Sheet</strong></li>
-  <li>Choose a starting point:
-    <ul>
-      <li><strong>From a preset</strong> — pick from over 51 ready-made templates (see below)</li>
-      <li><strong>Blank</strong> — start with an empty spreadsheet</li>
-    </ul>
-  </li>
+  <li>Go to <strong>Settings → Integrations</strong> and select <strong>Connect</strong> next to Telegram</li>
+  <li>This opens Telegram with a one-time link already filled in — tap <strong>Start</strong> in the chat that opens</li>
+  <li>The bot confirms you're connected — no separate password to manage</li>
 </ol>
-<p>A new Sheet opens immediately with 26 columns and 100 rows already in place.</p>
+<p>The connect link expires after 10 minutes and can only be used once. If it doesn't work right away, go back to <strong>Settings → Integrations</strong> and select <strong>Connect</strong> again for a fresh one.</p>
+<p>To disconnect at any time, go back to <strong>Settings → Integrations</strong> and select <strong>Disconnect</strong>. Your captured tasks and notes stay in Alpha Space — only the bot connection is removed.</p>
 
-<h2>Available Presets</h2>
-<p>Presets give you pre-configured columns for common use cases. They're organized into five categories:</p>
-<table>
-  <thead><tr><th>Category</th><th>Examples</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Work</strong></td><td>Meeting Notes, Team Schedule, Employee Directory, Hiring Tracker, Performance Review</td></tr>
-    <tr><td><strong>Projects &amp; Dev</strong></td><td>Sprint Board, Bug Tracker, Product Roadmap, Release Checklist, Tech Debt Log</td></tr>
-    <tr><td><strong>Finance</strong></td><td>Budget Planner, Expense Log, Invoice Tracker, Investment Portfolio, Payroll</td></tr>
-    <tr><td><strong>Personal</strong></td><td>Goals Tracker, Book List, Travel Planner, Recipe Book, Health Log</td></tr>
-    <tr><td><strong>Marketing &amp; Sales</strong></td><td>Content Calendar, CRM, Social Media Tracker, Lead Pipeline, SEO Tracker</td></tr>
-  </tbody>
-</table>
-<p>Each preset comes with appropriate column types pre-configured. You can modify any preset after opening it.</p>
-
-<h2>Editing Cells</h2>
+<h2>Just Talk to It</h2>
+<p>Once connected, you don't need any special syntax. Send the bot a message the way you'd text a person, and it figures out what you mean:</p>
 <ul>
-  <li><strong>Start editing</strong> — select a cell and press Enter, or double-click it</li>
-  <li><strong>Confirm</strong> — press Enter or Tab to move to the next cell</li>
-  <li><strong>Cancel</strong> — press Esc to discard changes</li>
+  <li><strong>A task or reminder</strong> — <em>"call Anton about the budget before Friday"</em> — recognized as worth saving; the bot asks where to put it</li>
+  <li><strong>A casual message</strong> — <em>"thanks!"</em>, <em>"lol"</em>, or a quick question like <em>"what's on my plate today?"</em> — the bot just replies normally, it won't try to save small talk as a task</li>
+  <li><strong>A question about your own tasks</strong> — <em>"what's overdue?"</em> — answered directly, not saved anywhere</li>
 </ul>
 
-<h2>Column Types</h2>
-<table>
-  <thead><tr><th>Type</th><th>Description</th><th>Example</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Text</strong></td><td>Free-form text</td><td>Names, notes, URLs</td></tr>
-    <tr><td><strong>Number</strong></td><td>Numeric values</td><td>Quantity, price, percentage</td></tr>
-    <tr><td><strong>Date</strong></td><td>Calendar date with a date picker</td><td>Due dates, deadlines</td></tr>
-    <tr><td><strong>Select</strong></td><td>A dropdown with predefined options</td><td>Status: To Do / In Progress / Done</td></tr>
-  </tbody>
-</table>
-<p>To change a column type: select the column header → select the type icon → choose a new type.</p>
+<h3>Saving Something</h3>
+<p>When you send something worth capturing, the bot asks where it should go:</p>
+<p><strong>→ Task</strong> · <strong>→ Note</strong> · <strong>Just the Inbox</strong></p>
+<p><strong>→ Task</strong> and <strong>→ Note</strong> save it straight into a Space or Notebook you pick. <strong>Just the Inbox</strong> keeps it in your Alpha Space Inbox — the app's catch-everything holding area — without deciding right away; sort it out later from the Inbox in the app.</p>
+<p>If the bot isn't fully sure whether something is worth saving, it asks first — <em>"Looks like a task — save it? [Yes] [No]"</em> — instead of guessing. Reply with <strong>да/нет</strong> (or tap the button) either way.</p>
 
-<h2>Formula Support</h2>
-<p>Sheets supports spreadsheet formulas. Start any cell with <code>=</code> to enter a formula.</p>
-<table>
-  <thead><tr><th>Formula</th><th>What it does</th></tr></thead>
-  <tbody>
-    <tr><td><code>=SUM(B2:B10)</code></td><td>Adds up the values in cells B2 through B10</td></tr>
-    <tr><td><code>=AVERAGE(C2:C20)</code></td><td>Calculates the average of a range</td></tr>
-    <tr><td><code>=IF(D2&gt;100, "Over budget", "OK")</code></td><td>Returns one value or another based on a condition</td></tr>
-    <tr><td><code>=COUNT(A2:A50)</code></td><td>Counts how many cells in a range have values</td></tr>
-    <tr><td><code>=MAX(E2:E30)</code></td><td>Returns the highest value in a range</td></tr>
-  </tbody>
-</table>
-<p>Formulas work across rows and columns. Cell references update automatically when you copy a formula.</p>
+<h3>Changed Your Mind?</h3>
+<p>If the bot asks where to save something and you don't want to save it after all, just say <strong>"no"</strong> — it drops the question and nothing gets saved. The item stays safely in your Inbox either way, so nothing is ever lost even if you cancel by mistake.</p>
 
-<h2>Adding and Deleting Rows &amp; Columns</h2>
-<p><strong>Add a row</strong> — select the <strong>+</strong> button at the bottom of the sheet, or right-click on a row number and choose <strong>Insert row above/below</strong>.</p>
-<p><strong>Delete a row</strong> — right-click on a row number and select <strong>Delete row</strong>.</p>
-<p><strong>Add a column</strong> — right-click on a column header and select <strong>Insert column left/right</strong>.</p>
-<p><strong>Delete a column</strong> — right-click on a column header and select <strong>Delete column</strong>.</p>
-
-<h2>Multiple Sheets (Tabs)</h2>
-<p>A single spreadsheet file can contain multiple sheets, similar to tabs in a workbook. The sheet tab bar appears at the bottom of the editor.</p>
+<h2>Sending Files, Photos, Voice Notes, and Links</h2>
 <ul>
-  <li><strong>Add a sheet</strong> — select the <strong>+</strong> button at the right end of the tab bar and type a name</li>
-  <li><strong>Rename a sheet</strong> — double-click the tab name to edit it inline</li>
-  <li><strong>Reorder sheets</strong> — drag a tab left or right along the tab bar</li>
-  <li><strong>Switch sheets</strong> — select any tab to switch to it; data in each sheet is independent</li>
+  <li><strong>Voice messages</strong> — the bot transcribes what you said and offers to save the transcript as a task or note</li>
+  <li><strong>Photos</strong> — the photo itself is saved to Documents automatically; if there's readable text in it, the bot also offers to save that text as a task or note</li>
+  <li><strong>Documents/videos</strong> — saved to Documents automatically</li>
+  <li><strong>Links</strong> — paste a URL and the bot fetches a preview (title) and offers to save it</li>
 </ul>
 
-<h2>Conditional Formatting</h2>
-<p>Conditional formatting changes the visual appearance of cells automatically based on their value. Use it to highlight overdue dates, flag values above a threshold, or color-code statuses.</p>
-<p><strong>To add a rule:</strong></p>
-<ol>
-  <li>Select a column header to open its settings</li>
-  <li>Select <strong>Conditional formatting</strong></li>
-  <li>Choose a condition (e.g. "greater than", "equals", "contains")</li>
-  <li>Set the value and choose a highlight color</li>
-  <li>Select <strong>Save</strong> — all cells matching the condition are highlighted immediately</li>
-</ol>
-<p>Multiple rules can apply to the same column. Rules are evaluated in order; the first matching rule wins.</p>
+<h2>Commands</h2>
+<table>
+  <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td><code>/tasks</code></td><td>Shows your 10 nearest active tasks, soonest due date first</td></tr>
+    <tr><td><code>/folder</code></td><td>Shows your 10 most recently added files in Documents</td></tr>
+    <tr><td><code>/help</code></td><td>Shows the quick command list</td></tr>
+  </tbody>
+</table>
+<p>You don't need to remember these — you can also just ask in plain language, e.g. <em>"what are my tasks?"</em></p>
 
-<h2>AI Query Input</h2>
-<p>Each Sheet has an AI input bar at the top. Type a question about your data in plain language and ARIA will analyze the sheet and answer.</p>
+<h2>Finding a File</h2>
+<p>Ask the bot to find something by name — e.g. <em>"find the pricing deck"</em> — and it searches your Documents and task attachments for a matching file name and sends it back.</p>
+
+<h2>Privacy</h2>
 <ul>
-  <li><em>"Which items have a status of Done?"</em></li>
-  <li><em>"What's the total of column C?"</em></li>
-  <li><em>"Show me rows where priority is High"</em></li>
+  <li>The bot only works after you've explicitly connected your Alpha Space account — nobody else can use it to see or change your data</li>
+  <li>Everything you send only affects the organization(s) you're a member of — same isolation as the rest of Alpha Space</li>
+  <li>Conversation history is kept only to give the bot short-term context — it's not shared or used to train any model</li>
 </ul>
-<p>ARIA reads the current sheet contents and responds in plain text. It does not modify your data unless you explicitly ask it to.</p>
 
-<h2>First-Open Hints</h2>
-<p>The first time you open a Sheet from a preset, a short tips panel appears at the top explaining what the preset is for and how to use the columns. Select <strong>Got it</strong> to dismiss it.</p>
+<div class="tip-box">
+  <div class="tip-box-icon">💡</div>
+  <div class="tip-box-body"><strong>Did you know?</strong> The bot never silently guesses on something worth saving — if it's not sure, it asks first, and anything you cancel stays safely in your Inbox rather than being lost.</div>
+</div>
 
 <p class="doc-footer-link">Need help? <a href="faq.html">Visit the FAQ</a></p>
 `},
@@ -697,18 +634,16 @@ aria: {
 <p>ARIA never makes changes without showing you the proposal first.</p>
 
 <h2>Rate Limits</h2>
-<p>ARIA uses AI credits (called AI requests). Each message you send to ARIA uses one credit.</p>
-<p><strong>When do credits reset?</strong> Credits reset on the 1st of every month.</p>
-<p><strong>What happens when you run out?</strong> ARIA shows a friendly message and the input is disabled. You can upgrade your plan to get more credits, or wait until the 1st of next month.</p>
-<p><strong>How to check your remaining credits</strong> — go to <strong>Settings → Billing</strong> and look at the AI Requests meter.</p>
+<p>ARIA conversations are limited on the Free plan. Each message you send to ARIA uses one conversation from your monthly quota.</p>
+<p><strong>When does the quota reset?</strong> On the 1st of every month.</p>
+<p><strong>What happens when you run out?</strong> ARIA shows a friendly message and the input is disabled until the quota resets — or you can upgrade to Pro or Business for unlimited ARIA.</p>
+<p><strong>How to check your remaining quota</strong> — go to <strong>Settings → Billing</strong> and look at the ARIA usage meter.</p>
 <table>
-  <thead><tr><th>Plan</th><th>Monthly AI requests</th></tr></thead>
+  <thead><tr><th>Plan</th><th>Monthly ARIA conversations</th></tr></thead>
   <tbody>
-    <tr><td>Free</td><td>20</td></tr>
-    <tr><td>Pro</td><td>500</td></tr>
-    <tr><td>Team</td><td>2,000</td></tr>
-    <tr><td>Team Pro</td><td>8,000</td></tr>
-    <tr><td>Enterprise</td><td>Custom</td></tr>
+    <tr><td>Free</td><td>50</td></tr>
+    <tr><td>Pro</td><td>Unlimited</td></tr>
+    <tr><td>Business</td><td>Unlimited</td></tr>
   </tbody>
 </table>
 
@@ -721,7 +656,6 @@ aria: {
   <li>Tasks and columns in your current organization's spaces</li>
   <li>Your personal tasks</li>
   <li>Note titles (and content when you ask about them)</li>
-  <li>Sheet data in the current organization</li>
 </ul>
 <p><strong>ARIA cannot see:</strong></p>
 <ul>
@@ -742,76 +676,47 @@ billing: {
   title: 'Billing & Plans',
   content: `
 <h1>Billing &amp; Plans</h1>
-<p>Alpha Space offers a free plan for getting started and paid plans for individuals and teams who need more. All plans include the same core features — paid plans raise the limits.</p>
+<p>Alpha Space offers a free plan for getting started and paid plans for individuals and teams who need more. Spaces, tasks, boards, and notes are unlimited on <strong>every</strong> plan — paid plans raise the AI and team limits.</p>
 
 <h2>Free — $0/month</h2>
 <p>For getting started. No credit card required.</p>
 <table>
   <thead><tr><th>What's included</th><th>Limit</th></tr></thead>
   <tbody>
-    <tr><td>Users</td><td>1</td></tr>
-    <tr><td>Spaces</td><td>2</td></tr>
-    <tr><td>Notes</td><td>5</td></tr>
-    <tr><td>Boards</td><td>3</td></tr>
-    <tr><td>Personal tasks</td><td>10</td></tr>
-    <tr><td>AI requests / month</td><td>20</td></tr>
-    <tr><td>Storage</td><td>500 MB</td></tr>
+    <tr><td>Spaces, tasks, boards &amp; notes</td><td>Unlimited</td></tr>
+    <tr><td>ARIA conversations / month</td><td>50</td></tr>
     <tr><td>Folders</td><td>1</td></tr>
+    <tr><td>Board elements</td><td>50 per board</td></tr>
+    <tr><td>Storage</td><td>20 GB</td></tr>
   </tbody>
 </table>
 
-<h2>Pro — $9/month</h2>
-<p>For solo builders who want no limits and more AI. <em>$8/month billed annually — saves 17%.</em></p>
+<h2>Pro — $19/month</h2>
+<p>For power users who want unlimited ARIA and folders. <em>$15/month billed annually ($180/year) — saves 20%.</em></p>
 <table>
   <thead><tr><th>What's included</th><th>Limit</th></tr></thead>
   <tbody>
-    <tr><td>Users</td><td>1</td></tr>
-    <tr><td>Spaces</td><td>Unlimited</td></tr>
-    <tr><td>Notes</td><td>Unlimited</td></tr>
-    <tr><td>Boards</td><td>Unlimited</td></tr>
-    <tr><td>Tasks &amp; personal tasks</td><td>Unlimited</td></tr>
-    <tr><td>AI requests / month</td><td>500</td></tr>
-    <tr><td>Storage</td><td>15 GB</td></tr>
-    <tr><td>Folders</td><td>3</td></tr>
-    <tr><td>File attachments</td><td>✅</td></tr>
-    <tr><td>30-day activity log</td><td>✅</td></tr>
-    <tr><td>Priority support</td><td>✅</td></tr>
+    <tr><td>Everything in Free</td><td>—</td></tr>
+    <tr><td>ARIA conversations / month</td><td>Unlimited</td></tr>
+    <tr><td>Folders</td><td>Unlimited</td></tr>
+    <tr><td>Team members</td><td>Up to 3</td></tr>
+    <tr><td>Board elements</td><td>999 per board</td></tr>
+    <tr><td>Storage</td><td>20 GB</td></tr>
   </tbody>
 </table>
 
-<h2>Team — $25/month</h2>
-<p>For small teams collaborating together. <em>$21/month billed annually — saves 16%.</em></p>
+<h2>Business — $25/month per user</h2>
+<p>For teams — everything in Pro, with no member limit. <em>$20/month billed annually ($240/year) — saves 20%.</em></p>
 <table>
   <thead><tr><th>What's included</th><th>Limit</th></tr></thead>
   <tbody>
-    <tr><td>Users</td><td>Up to 8</td></tr>
-    <tr><td>Spaces, Notes, Boards, Tasks</td><td>Unlimited</td></tr>
-    <tr><td>AI requests / month</td><td>2,000 (shared)</td></tr>
-    <tr><td>Storage</td><td>50 GB</td></tr>
-    <tr><td>Custom roles &amp; permissions</td><td>✅</td></tr>
-    <tr><td>1-year activity log</td><td>✅</td></tr>
-    <tr><td>Priority support</td><td>✅</td></tr>
+    <tr><td>Everything in Pro</td><td>—</td></tr>
+    <tr><td>Team members</td><td>Unlimited</td></tr>
+    <tr><td>Board elements</td><td>Unlimited</td></tr>
+    <tr><td>Storage</td><td>20 GB per user</td></tr>
+    <tr><td>Team roles &amp; shared workspaces</td><td>✅</td></tr>
   </tbody>
 </table>
-
-<h2>Team Pro — $49/month</h2>
-<p>For growing teams that need more power and AI. <em>$41/month billed annually — saves 16%.</em></p>
-<table>
-  <thead><tr><th>What's included</th><th>Limit</th></tr></thead>
-  <tbody>
-    <tr><td>Users</td><td>Up to 30</td></tr>
-    <tr><td>Spaces, Notes, Boards, Tasks</td><td>Unlimited</td></tr>
-    <tr><td>AI requests / month</td><td>8,000 (shared)</td></tr>
-    <tr><td>Storage</td><td>200 GB</td></tr>
-    <tr><td>Custom roles &amp; permissions</td><td>✅</td></tr>
-    <tr><td>Unlimited activity log</td><td>✅</td></tr>
-    <tr><td>Public API access</td><td>✅</td></tr>
-    <tr><td>Priority support</td><td>✅</td></tr>
-  </tbody>
-</table>
-
-<h2>Enterprise — Custom pricing</h2>
-<p>For large organizations. Includes unlimited members, custom AI quota, SSO/SAML, dedicated support with SLA, on-premise option, and custom integrations. Contact <strong>uyowega3231123@gmail.com</strong> to get a quote.</p>
 
 <h2>How to Upgrade</h2>
 <ol>
@@ -825,16 +730,16 @@ billing: {
 <h2>Viewing Your Current Usage</h2>
 <p>Go to <strong>Settings → Billing</strong>. The Usage section shows progress bars for:</p>
 <ul>
-  <li>Spaces used vs. your limit</li>
-  <li>AI requests used this month</li>
-  <li>Notes, Boards, Sheets, and Personal Tasks</li>
+  <li>ARIA conversations used this month</li>
+  <li>Folders used vs. your limit</li>
+  <li>Board elements used per board</li>
   <li>Storage used</li>
-  <li>Team members (on team plans)</li>
+  <li>Team members (on Business)</li>
 </ul>
 <p>Bars turn <strong>amber</strong> when you're at 90% and <strong>red</strong> when you've hit the limit.</p>
 
 <h2>What Happens When You Hit a Limit</h2>
-<p>When you reach a limit, Alpha Space shows a prompt explaining which limit you've reached and offering to upgrade. You can still view all your existing content — only creating new items is blocked.</p>
+<p>When you reach a limit (for example, your monthly ARIA conversations on Free), Alpha Space shows a prompt explaining which limit you've reached and offering to upgrade. You can still view and use all your existing content — only the limited action itself is blocked until you upgrade or the limit resets.</p>
 
 <h2>Canceling Your Plan</h2>
 <p>You can cancel at any time from <strong>Settings → Billing → Cancel Plan</strong>.</p>
@@ -844,8 +749,8 @@ billing: {
   <li>All your data is preserved — nothing is deleted when you cancel</li>
 </ul>
 
-<h2>7-Day Money-Back Guarantee</h2>
-<p>Not happy? Contact support within 7 days of your first payment and we'll refund you in full, no questions asked.</p>
+<h2>Money-Back Guarantee</h2>
+<p>Annual plans include a <strong>14-day money-back guarantee</strong> — contact support within 14 days of your first annual payment for a full refund, no questions asked. Monthly plans can be canceled anytime (no refund for the current billing period, but no further charges either).</p>
 
 <p class="doc-footer-link">Need help? <a href="faq.html">Visit the FAQ</a></p>
 `},
@@ -907,13 +812,15 @@ settings: {
   <li>Copy the key immediately — it's only shown once</li>
 </ol>
 <p><strong>Revoke an API key</strong> — select the trash icon next to any key. Revoking is permanent and immediate; any application using that key will lose access.</p>
-<p><em>Note: API key access requires the Team Pro plan or higher.</em></p>
+
+<h2>Integrations</h2>
+<p>Connect Alpha Space to Telegram to capture tasks and notes from a chat. See the <a href="telegram.html">Telegram Bot documentation</a> for the connect steps and everything the bot can do.</p>
 
 <h2>Billing</h2>
 <p>See the <a href="billing.html">Billing documentation</a> for full details on plans, usage, and upgrading.</p>
 
 <h2>Deleting Your Account</h2>
-<div class="callout"><strong>Warning: this action is permanent and cannot be undone.</strong><br>Deleting your account removes all your data — spaces, tasks, notes, boards, sheets, files — immediately and permanently. There is no recovery after deletion.</div>
+<div class="callout"><strong>Warning: this action is permanent and cannot be undone.</strong><br>Deleting your account removes all your data — spaces, tasks, notes, boards, files — immediately and permanently. There is no recovery after deletion.</div>
 <p>To delete your account:</p>
 <ol>
   <li>Go to <strong>Settings → Account</strong></li>
@@ -953,7 +860,6 @@ shortcuts: {
     <tr><td><kbd>G</kbd> then <kbd>S</kbd></td><td>Go to Spaces</td></tr>
     <tr><td><kbd>G</kbd> then <kbd>B</kbd></td><td>Go to Boards</td></tr>
     <tr><td><kbd>G</kbd> then <kbd>N</kbd></td><td>Go to Notes</td></tr>
-    <tr><td><kbd>G</kbd> then <kbd>T</kbd></td><td>Go to Sheets</td></tr>
     <tr><td><kbd>G</kbd> then <kbd>A</kbd></td><td>Go to ARIA</td></tr>
   </tbody>
 </table>
@@ -982,20 +888,6 @@ shortcuts: {
   </tbody>
 </table>
 
-<h2>Sheets</h2>
-<table>
-  <thead><tr><th>Keys</th><th>Action</th></tr></thead>
-  <tbody>
-    <tr><td><kbd>↵</kbd> Enter</td><td>Start editing the selected cell</td></tr>
-    <tr><td><kbd>Tab</kbd></td><td>Move to the next cell (right)</td></tr>
-    <tr><td><kbd>⇧</kbd> <kbd>Tab</kbd></td><td>Move to the previous cell (left)</td></tr>
-    <tr><td><kbd>Esc</kbd></td><td>Cancel edit without saving</td></tr>
-    <tr><td><kbd>⌘Z</kbd></td><td>Undo</td></tr>
-    <tr><td><kbd>⌘C</kbd></td><td>Copy the selected range</td></tr>
-    <tr><td><kbd>⌘V</kbd></td><td>Paste</td></tr>
-  </tbody>
-</table>
-
 <p class="doc-footer-link">Need help? <a href="faq.html">Visit the FAQ</a></p>
 `},
 
@@ -1021,7 +913,7 @@ faq: {
 <p>Alpha Space shows an amber banner at the top of the page when it detects you're offline.</p>
 <p><strong>What still works offline:</strong></p>
 <ul>
-  <li>Browsing and reading all your previously loaded data (tasks, notes, boards, sheets)</li>
+  <li>Browsing and reading all your previously loaded data (tasks, notes, boards)</li>
   <li>Viewing board canvases and zooming around</li>
 </ul>
 <p><strong>What won't work offline:</strong></p>
@@ -1033,7 +925,7 @@ faq: {
 <p>When you come back online, queued actions are sent automatically. The banner disappears and your data syncs.</p>
 
 <h2>How do I move data between folders or organizations?</h2>
-<p>Currently, data (tasks, notes, boards, sheets) belongs to the organization it was created in. There is no built-in "move to another organization" tool.</p>
+<p>Currently, data (tasks, notes, boards) belongs to the organization it was created in. There is no built-in "move to another organization" tool.</p>
 <p><strong>Workarounds:</strong></p>
 <ul>
   <li>For notes: export the note as Markdown (see <a href="notes.html">Notes documentation</a>), then create a new note in the destination organization and paste the content</li>
@@ -1047,22 +939,21 @@ faq: {
 <ul>
   <li><strong>Notes</strong> — export as Markdown (one note at a time)</li>
   <li><strong>Boards</strong> — export as PNG image</li>
-  <li><strong>Sheets</strong> — right-click on the sheet and look for export options</li>
 </ul>
 <p>A full workspace export (all data at once) is not yet available. It is planned for a future release.</p>
 
 <h2>Is my data private?</h2>
 <p><strong>Between users:</strong> Yes. Each organization is completely isolated. A user in one organization cannot see anything from another organization — tasks, notes, files, or any other data. This isolation is enforced at the database level, not just in the UI.</p>
 <p><strong>Notes trash privacy:</strong> Deleted notes remain accessible in your personal Trash view, but they are not visible to other team members.</p>
-<p><strong>With ARIA:</strong> ARIA can read your tasks, notes, and sheets to answer your questions and take actions. It cannot read data from other organizations. Your data is not used to train AI models. See the <a href="aria.html">ARIA documentation</a> for the full list.</p>
+<p><strong>With ARIA:</strong> ARIA can read your tasks and notes to answer your questions and take actions. It cannot read data from other organizations. Your data is not used to train AI models. See the <a href="aria.html">ARIA documentation</a> for the full list.</p>
 
 <h2>What happens to my data if I cancel?</h2>
 <p>When you cancel a paid plan:</p>
 <ul>
   <li>Your plan stays active until the end of the billing period</li>
   <li>After that, you move to the Free plan — your data is preserved</li>
-  <li>You keep all your existing content (tasks, notes, boards, sheets)</li>
-  <li>You just can't create new items if you've exceeded Free plan limits</li>
+  <li>You keep all your existing content (tasks, notes, boards)</li>
+  <li>You just can't exceed Free plan limits going forward (e.g. ARIA conversations/month, folders)</li>
 </ul>
 <p><strong>We do not delete your data when you cancel.</strong> If you later upgrade again, everything is still there. The only way your data is deleted is if you explicitly delete your account (see <a href="settings.html">Settings documentation</a>).</p>
 
@@ -1080,7 +971,6 @@ faq: {
   <li>Your tasks and columns across all spaces in your current organization</li>
   <li>Your personal tasks</li>
   <li>Note titles and content</li>
-  <li>Sheet data</li>
 </ul>
 <p>ARIA cannot see:</p>
 <ul>
@@ -1102,6 +992,24 @@ changelog: {
   content: `
 <h1>What's New in Alpha Space</h1>
 <p>A running list of what we've shipped — new features, improvements, and fixes. Most recent changes appear first.</p>
+
+<div class="changelog-month">July 2026</div>
+
+<div class="changelog-entry">
+  <div class="changelog-entry-title"><span class="changelog-badge badge-new">New</span>Telegram Bot — smarter conversation handling</div>
+  <ul>
+    <li>Capture tasks, notes, and files straight from a Telegram chat — text, voice, photos, documents, and links, all routed to the same Inbox as the app</li>
+    <li>The bot now reliably tells apart a casual message from something worth saving, and correctly recognizes when you say no to a save prompt — see the <a href="telegram.html">Telegram Bot documentation</a></li>
+    <li>Fixed: connecting the bot from an iPhone could silently do nothing — the connect button now opens Telegram reliably on iOS</li>
+  </ul>
+</div>
+
+<div class="changelog-entry">
+  <div class="changelog-entry-title"><span class="changelog-badge badge-fixed">Removed</span>Sheets</div>
+  <ul>
+    <li>The Sheets spreadsheet feature has been retired and removed from the product</li>
+  </ul>
+</div>
 
 <div class="changelog-month">May 2026</div>
 
@@ -1247,9 +1155,10 @@ guides: {
 <h2 id="solo-guide">Guide 1: Get Organized as a Solo User</h2>
 <p>This guide gets you from zero to a working personal system in under 10 minutes.</p>
 
-<h3>Step 1 — Set up your task list</h3>
-<p>Go to <strong>Tasks</strong> in the sidebar. This is your personal to-do list — separate from any team projects. Type your first task and press Enter. Try typing something like "Review emails tomorrow" and watch Alpha Space automatically set the due date.</p>
-<p>Add 5–10 things you need to do this week. Don't worry about organizing them yet — just get them out of your head.</p>
+<h3>Step 1 — Dump everything on your mind into ARIA</h3>
+<p>Open <strong>ARIA</strong> and list out 5–10 things you need to do this week, mixed together — quick personal errands and real project work. Don't sort them yourself:</p>
+<blockquote>"I have these things to handle: call the dentist, finish the Q3 report, review emails tomorrow, read chapter 4"</blockquote>
+<p>ARIA sorts genuinely personal items into your <a href="tasks.html">personal tasks</a> (visible on your Solo Dashboard) and proposes the rest as real tasks — review the proposal and select <strong>Apply</strong>.</p>
 
 <h3>Step 2 — Create a Space for your main project</h3>
 <p>Go to <strong>Spaces</strong> and create a Space for your most important ongoing project — could be work, a side project, or anything with multiple steps. Add your first few tasks to the relevant columns.</p>
@@ -1307,8 +1216,8 @@ guides: {
 <h3>Phase 3 — Document in Notes</h3>
 <p>Create notes for each major document: Product Brief, Technical Spec, Press Release draft. Keep them in the Projects category. Link to them from ARIA: <em>"What's in my Product Brief note?"</em></p>
 
-<h3>Phase 4 — Track in Sheets</h3>
-<p>Use the Launch Checklist or Marketing Calendar preset in Sheets to track launch activities with dates and owners. This gives you a second view alongside the Kanban board.</p>
+<h3>Phase 4 — Keep a running checklist</h3>
+<p>Add a Checklist block to your Launch Plan board for cross-cutting launch activities that don't belong to one owner — a second view alongside the Kanban board that's always visible while you're planning.</p>
 
 <hr>
 
@@ -1319,7 +1228,7 @@ guides: {
 <p>Go to <strong>Notes</strong> and create a note for each subject or course. Use the Learning category. Write summaries after each session — even 3 bullet points helps retention.</p>
 
 <h3>Step 2 — Turn action items into tasks</h3>
-<p>While studying, when you identify something you need to do ("re-read chapter 4", "watch that lecture"), add it to <strong>Tasks</strong> with a due date. Don't let study to-dos get lost in your notes.</p>
+<p>While studying, when you identify something you need to do ("re-read chapter 4", "watch that lecture"), tell ARIA — it creates a <a href="tasks.html">personal task</a> with a due date so it doesn't get lost in your notes.</p>
 
 <h3>Step 3 — Use a Board for visual thinking</h3>
 <p>For complex topics — especially ones with many connected concepts — create a Board and map the relationships. Place key terms as Note blocks and draw connections between related ideas.</p>

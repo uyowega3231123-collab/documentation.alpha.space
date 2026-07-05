@@ -24,8 +24,8 @@
         { key: 'tasks',     label: 'Personal Tasks' },
         { key: 'notes',     label: 'Notes' },
         { key: 'boards',    label: 'Boards' },
-        { key: 'sheets',    label: 'Sheets' },
-        { key: 'aria',      label: 'ARIA AI' }
+        { key: 'aria',      label: 'ARIA AI' },
+        { key: 'telegram',  label: 'Telegram Bot' }
       ]
     },
     {
@@ -47,7 +47,7 @@
 
   var PAGE_ORDER = [
     'index', 'guides', 'dashboard', 'spaces', 'tasks', 'notes',
-    'boards', 'sheets', 'aria', 'billing', 'settings',
+    'boards', 'aria', 'telegram', 'billing', 'settings',
     'shortcuts', 'faq', 'changelog'
   ];
 

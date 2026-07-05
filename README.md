@@ -84,17 +84,19 @@ If you want the site to live at `documentation.alpha.space` or `docs.alphaspace.
 │   └── content.js      ← All documentation content as HTML
 └── pages/
     ├── index.html      ← Overview / Getting Started
+    ├── guides.html
     ├── dashboard.html
     ├── spaces.html
     ├── tasks.html
     ├── notes.html
     ├── boards.html
-    ├── sheets.html
     ├── aria.html
+    ├── telegram.html
     ├── billing.html
     ├── settings.html
     ├── shortcuts.html
-    └── faq.html
+    ├── faq.html
+    └── changelog.html
 ```
 
 ---
